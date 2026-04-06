@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-slate-950 text-slate-50 antialiased;
+}
+
+body {
+  @apply min-h-screen;
+}
+
+a {
+  @apply text-brand hover:text-brand-light;
+}
+
+.card {
+  @apply rounded-2xl bg-slate-900/60 border border-slate-800 shadow-soft;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-brand-dark transition;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:bg-slate-800 transition;
+}
+
