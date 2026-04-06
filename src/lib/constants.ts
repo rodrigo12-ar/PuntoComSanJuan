@@ -5,6 +5,6 @@ export const BUSINESS = {
   city: 'San Juan',
   region: 'San Juan',
   country: 'AR',
-  url: "https://puntocomsanjuan.vecel.app"
+  url: "https://punto-com-san-juan-punto-com.vecel.app"
 } as const;
 

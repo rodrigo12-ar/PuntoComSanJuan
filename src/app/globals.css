@@ -4,7 +4,8 @@
 
 html,
 body {
-  @apply bg-slate-950 text-slate-50 antialiased;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  @apply text-slate-900 antialiased;
 }
 
 body {
@@ -12,18 +13,18 @@ body {
 }
 
 a {
-  @apply text-brand hover:text-brand-light;
+  @apply text-brand transition hover:text-brand-light;
 }
 
 .card {
-  @apply rounded-2xl bg-slate-900/60 border border-slate-800 shadow-soft;
+  @apply rounded-2xl border border-slate-200 bg-white shadow-soft;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-brand-dark transition;
+  @apply inline-flex items-center justify-center rounded-full bg-brand px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-dark;
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center rounded-full border border-slate-700 px-5 py-2.5 text-sm font-semibold text-slate-100 hover:bg-slate-800 transition;
+  @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:bg-slate-100;
 }
 
