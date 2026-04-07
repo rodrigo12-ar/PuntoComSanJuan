@@ -1,12 +1,39 @@
 'use client';
 
-import { useMemo, useState, useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { SITE } from '@/lib/site';
 import { toWaMePrefillUrl } from '@/lib/utils';
 
 type Device = 'Desktop computer' | 'Notebook' | 'Printer' | 'Other device';
-type Problem = 'Computer is slow' | 'Virus or malware' | 'Computer does not start' | 'Hardware problem' | 'Other issue';
+type Problem =
+  | 'Computer is slow'
+  | 'Virus or malware'
+  | 'Computer does not start'
+  | 'Hardware problem'
+  | 'Other issue';
 type OS = 'Windows' | 'Mac' | 'Linux' | "I don't know";
+
+const deviceOptions: ReadonlyArray<{ label: string; value: Device }> = [
+  { label: 'Computadora de escritorio', value: 'Desktop computer' },
+  { label: 'Notebook', value: 'Notebook' },
+  { label: 'Impresora', value: 'Printer' },
+  { label: 'Otro', value: 'Other device' },
+];
+
+const problemOptions: ReadonlyArray<{ label: string; value: Problem }> = [
+  { label: 'Anda lenta', value: 'Computer is slow' },
+  { label: 'Virus o malware', value: 'Virus or malware' },
+  { label: 'No prende', value: 'Computer does not start' },
+  { label: 'Problema de hardware', value: 'Hardware problem' },
+  { label: 'Otro problema', value: 'Other issue' },
+];
+
+const osOptions: ReadonlyArray<{ label: string; value: OS }> = [
+  { label: 'Windows', value: 'Windows' },
+  { label: 'Mac', value: 'Mac' },
+  { label: 'Linux', value: 'Linux' },
+  { label: 'No lo se', value: "I don't know" },
+];
 
 export function AIChatWidget() {
   const [open, setOpen] = useState(false);
@@ -15,6 +42,14 @@ export function AIChatWidget() {
   const [problem, setProblem] = useState<Problem | null>(null);
   const [os, setOs] = useState<OS | null>(null);
   const [details, setDetails] = useState('');
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpen(true);
+    }, 1200);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const summary = useMemo(() => {
     const d = device ?? 'un equipo';
@@ -34,7 +69,7 @@ export function AIChatWidget() {
           <div className="flex items-center justify-between border-b border-slate-800 px-4 py-3">
             <div className="min-w-0">
               <div className="text-sm font-extrabold">{SITE.name}</div>
-              <div className="text-xs text-slate-300">Asistente técnico</div>
+              <div className="text-xs text-slate-300">Asistente tecnico</div>
             </div>
             <button
               className="rounded-full border border-slate-800 px-3 py-1 text-xs text-slate-200 hover:bg-slate-900"
@@ -47,23 +82,23 @@ export function AIChatWidget() {
 
           <div className="max-h-[65vh] space-y-4 overflow-auto px-4 py-4">
             <div className="rounded-2xl bg-slate-900/60 p-3 text-sm text-slate-100">
-              Hola 👋 soy el asistente técnico de Punto Com. Voy a hacerte algunas preguntas para ayudarte mejor.
+              Hola, soy el asistente tecnico de Punto Com. Voy a hacerte algunas preguntas para ayudarte mejor.
             </div>
 
             {step === 1 ? (
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-slate-100">1. Que Necesitas Reparar?</div>
+                <div className="text-sm font-semibold text-slate-100">1. Que necesitas reparar?</div>
                 <div className="grid gap-2">
-                  {(['Computadora de esritorio', 'Notebook', 'impresora', 'otro'] as const).map((x) => (
+                  {deviceOptions.map((option) => (
                     <button
-                      key={x}
+                      key={option.value}
                       className="rounded-xl border border-slate-800 bg-slate-950/40 px-3 py-2 text-left text-sm text-slate-100 hover:bg-slate-900/60"
                       onClick={() => {
-                        setDevice(x);
+                        setDevice(option.value);
                         setStep(2);
                       }}
                     >
-                      {x}
+                      {option.label}
                     </button>
                   ))}
                 </div>
@@ -72,26 +107,18 @@ export function AIChatWidget() {
 
             {step === 2 ? (
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-slate-100">2. What problem are you experiencing?</div>
+                <div className="text-sm font-semibold text-slate-100">2. Que problema estas teniendo?</div>
                 <div className="grid gap-2">
-                  {(
-                    [
-                      'Anda Lenta',
-                      'Virus o malware',
-                      'No Prende',
-                      'Problema De Hadware',
-                      'Otro Problema'
-                    ] as const
-                  ).map((x) => (
+                  {problemOptions.map((option) => (
                     <button
-                      key={x}
+                      key={option.value}
                       className="rounded-xl border border-slate-800 bg-slate-950/40 px-3 py-2 text-left text-sm text-slate-100 hover:bg-slate-900/60"
                       onClick={() => {
-                        setProblem(x);
+                        setProblem(option.value);
                         setStep(3);
                       }}
                     >
-                      {x}
+                      {option.label}
                     </button>
                   ))}
                 </div>
@@ -100,18 +127,18 @@ export function AIChatWidget() {
 
             {step === 3 ? (
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-slate-100">3. What operating system are you using?</div>
+                <div className="text-sm font-semibold text-slate-100">3. Que sistema operativo usas?</div>
                 <div className="grid gap-2">
-                  {(['Windows', 'Mac', 'Linux', "No lo se"] as const).map((x) => (
+                  {osOptions.map((option) => (
                     <button
-                      key={x}
+                      key={option.value}
                       className="rounded-xl border border-slate-800 bg-slate-950/40 px-3 py-2 text-left text-sm text-slate-100 hover:bg-slate-900/60"
                       onClick={() => {
-                        setOs(x);
+                        setOs(option.value);
                         setStep(4);
                       }}
                     >
-                      {x}
+                      {option.label}
                     </button>
                   ))}
                 </div>
@@ -120,12 +147,12 @@ export function AIChatWidget() {
 
             {step === 4 ? (
               <div className="space-y-3">
-                <div className="text-sm font-semibold text-slate-100">4. Describe el Problema</div>
+                <div className="text-sm font-semibold text-slate-100">4. Describe el problema</div>
                 <textarea
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
                   rows={3}
-                  placeholder="Contame qué pasa, desde cuándo, mensajes de error, etc."
+                  placeholder="Contame que pasa, desde cuando, mensajes de error, etc."
                   className="w-full resize-none rounded-xl border border-slate-800 bg-slate-950/40 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 outline-none focus:border-brand/60"
                 />
 
@@ -135,7 +162,7 @@ export function AIChatWidget() {
                 </div>
 
                 <a className="btn-primary w-full" href={waUrl} target="_blank" rel="noreferrer">
-                  Enviar diagnóstico por WhatsApp
+                  Enviar diagnostico por WhatsApp
                 </a>
 
                 <button
@@ -160,19 +187,11 @@ export function AIChatWidget() {
         <button
           className="btn-primary shadow-soft"
           onClick={() => setOpen(true)}
-          aria-label="Abrir asistente técnico"
+          aria-label="Abrir asistente tecnico"
         >
           Asistente
         </button>
       ) : null}
     </div>
   );
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setOpen(true);
-    }, 1200); // 1.2 segundos (queda más natural)
-  
-    return () => clearTimeout(timer);
-  }, []);
 }
-

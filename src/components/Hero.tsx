@@ -11,7 +11,7 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:py-24">
         <div className="space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-700 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-medium text-slate-900 shadow-sm">
             Servicio técnico informático en {SITE.city}
           </div>
 
@@ -19,7 +19,7 @@ export function Hero() {
             Soluciones informáticas claras, rápidas y profesionales
           </h1>
 
-          <p className="max-w-xl text-base text-slate-600 md:text-lg">
+          <p className="max-w-xl text-base text-slate-900 md:text-lg">
             Reparación de PC y notebooks, limpieza, optimización, instalación de sistemas,
             soporte técnico y atención personalizada en San Juan.
           </p>
