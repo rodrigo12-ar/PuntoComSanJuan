@@ -7,23 +7,36 @@ export const metadata: Metadata = {
   title: 'Admin Login'
 };
 
-export default async function AdminLoginPage() {
+type Props = {
+  searchParams?: { unauthorized?: string };
+};
+
+export default async function AdminLoginPage({ searchParams }: Props) {
   const supabase = await createClient();
   const {
     data: { session }
   } = await supabase.auth.getSession();
+  const adminEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+  const sessionEmail = session?.user?.email?.toLowerCase();
 
-  if (session) {
+  if (session && adminEmail && sessionEmail === adminEmail) {
     redirect('/admin/dashboard');
   }
+
+  const unauthorized = searchParams?.unauthorized === '1';
 
   return (
     <div className="mx-auto max-w-md">
       <div className="card p-6">
         <h1 className="text-xl font-extrabold tracking-tight">Ingresar</h1>
         <p className="mt-2 text-sm text-slate-300">
-          Ingresá con tu usuario de Supabase (email y contraseña) para administrar el contenido.
+          Ingresá con tu usuario de Supabase para administrar el contenido del sitio.
         </p>
+        {unauthorized ? (
+          <div className="mt-4 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-amber-100">
+            Esa cuenta no está autorizada para acceder al panel.
+          </div>
+        ) : null}
         <AdminLoginForm />
       </div>
     </div>

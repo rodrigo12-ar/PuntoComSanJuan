@@ -8,10 +8,17 @@ export async function middleware(req: NextRequest) {
     data: { session }
   } = await supabase.auth.getSession();
 
-  if (req.nextUrl.pathname.startsWith('/admin') && !req.nextUrl.pathname.startsWith('/admin/login')) {
+  const pathname = req.nextUrl.pathname;
+  const adminEmail = process.env.ADMIN_EMAIL?.trim().toLowerCase();
+  const sessionEmail = session?.user?.email?.toLowerCase();
+
+  if (pathname.startsWith('/admin') && !pathname.startsWith('/admin/login')) {
     if (!session) {
-      const redirectUrl = new URL('/admin/login', req.url);
-      return NextResponse.redirect(redirectUrl);
+      return NextResponse.redirect(new URL('/admin/login', req.url));
+    }
+
+    if (adminEmail && sessionEmail !== adminEmail) {
+      return NextResponse.redirect(new URL('/admin/login?unauthorized=1', req.url));
     }
   }
 
@@ -21,4 +28,3 @@ export async function middleware(req: NextRequest) {
 export const config = {
   matcher: ['/admin/:path*']
 };
-

@@ -3,6 +3,7 @@ import "./globals.css";
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { AIChatWidget } from '@/components/AIChatWidget';
+import { VisitTracker } from '@/components/VisitTracker';
 import { BUSINESS } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1">{children}</main>
         <Footer />
         <AIChatWidget />
+        <VisitTracker />
         <script type="application/ld+json" suppressHydrationWarning>
           {JSON.stringify(ldJson)}
         </script>
