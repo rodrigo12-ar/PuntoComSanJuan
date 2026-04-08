@@ -2,16 +2,16 @@ import type { Metadata } from 'next';
 import { SITE } from '@/lib/site';
 
 const values = [
-  'Explicacion simple del problema y alternativas.',
+  'Explicación simple del problema y alternativas.',
   'Presupuesto transparente.',
-  'Buenas practicas de seguridad y respaldo.',
+  'Buenas prácticas de seguridad y respaldo.',
   'Soporte post-servicio.'
 ] as const;
 
 const process = [
   {
     title: 'Escuchamos el problema',
-    description: 'Cada caso empieza con contexto real: sintomas, tiempos y uso del equipo.'
+    description: 'Cada caso empieza con contexto real: síntomas, tiempos y uso del equipo.'
   },
   {
     title: 'Diagnosticamos con criterio',
@@ -19,13 +19,13 @@ const process = [
   },
   {
     title: 'Cerramos con seguimiento',
-    description: 'No solo resolvemos: tambien dejamos recomendaciones para que dure.'
+    description: 'No solo resolvemos: también dejamos recomendaciones para que dure.'
   }
 ] as const;
 
 export const metadata: Metadata = {
   title: 'Sobre nosotros',
-  description: `Conoce a ${SITE.name}. Servicio tecnico informatico en ${SITE.city}, Argentina.`
+  description: `Conocé a ${SITE.name}. Servicio técnico informático en ${SITE.city}, Argentina.`
 };
 
 export default function AboutPage() {
@@ -38,7 +38,7 @@ export default function AboutPage() {
             Sobre {SITE.name}
           </h1>
           <p className="reveal-up reveal-up-delay-2 max-w-xl text-slate-600">
-            Somos un servicio tecnico informatico enfocado en diagnosticos claros y soluciones duraderas para hogares y
+            Somos un servicio técnico informático enfocado en diagnósticos claros y soluciones duraderas para hogares y
             comercios en {SITE.city}.
           </p>
 
@@ -56,21 +56,21 @@ export default function AboutPage() {
           <div className="card p-6 text-slate-900">
             <div className="text-sm font-semibold text-slate-900">Zona de cobertura</div>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              {SITE.city} y alrededores. Consulta disponibilidad para retiro, entrega o coordinacion del equipo.
+              {SITE.city} y alrededores. Consultá disponibilidad para retiro, entrega o coordinación del equipo.
             </p>
           </div>
 
           <div className="card p-6 text-slate-900">
-            <div className="text-sm font-semibold text-slate-900">Tecnologia</div>
+            <div className="text-sm font-semibold text-slate-900">Tecnología</div>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Trabajamos con Windows, Mac y Linux. Instalaciones, limpieza, upgrades y solucion de fallas de hardware.
+              Trabajamos con Windows, Mac y Linux. Instalaciones, limpieza, upgrades y solución de fallas de hardware.
             </p>
           </div>
 
           <div className="card p-6 text-slate-900">
             <div className="text-sm font-semibold text-slate-900">Canal directo</div>
             <p className="mt-2 text-sm leading-6 text-slate-600">
-              Priorizamos contacto rapido por WhatsApp e Instagram para que el primer intercambio ya sea util.
+              Priorizamos contacto rápido por WhatsApp e Instagram para que el primer intercambio ya sea útil.
             </p>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
 
       <section className="mt-14">
         <div className="max-w-2xl">
-          <div className="section-kicker reveal-up">Como trabajamos</div>
+          <div className="section-kicker reveal-up">Cómo trabajamos</div>
           <h2 className="reveal-up reveal-up-delay-1 mt-4 text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">
             Un proceso simple, visible y profesional
           </h2>

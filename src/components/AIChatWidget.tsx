@@ -32,7 +32,7 @@ const osOptions: ReadonlyArray<{ label: string; value: OS }> = [
   { label: 'Windows', value: 'Windows' },
   { label: 'Mac', value: 'Mac' },
   { label: 'Linux', value: 'Linux' },
-  { label: 'No lo se', value: "I don't know" },
+  { label: 'No lo sé', value: "I don't know" },
 ];
 
 export function AIChatWidget() {
@@ -69,7 +69,7 @@ export function AIChatWidget() {
           <div className="flex items-center justify-between border-b border-slate-800 px-4 py-3">
             <div className="min-w-0">
               <div className="text-sm font-extrabold">{SITE.name}</div>
-              <div className="text-xs text-slate-300">Asistente tecnico</div>
+              <div className="text-xs text-slate-300">Asistente técnico</div>
             </div>
             <button
               className="rounded-full border border-slate-800 px-3 py-1 text-xs text-slate-200 hover:bg-slate-900"
@@ -82,12 +82,12 @@ export function AIChatWidget() {
 
           <div className="max-h-[65vh] space-y-4 overflow-auto px-4 py-4">
             <div className="rounded-2xl bg-slate-900/60 p-3 text-sm text-slate-100">
-              Hola, soy el asistente tecnico de Punto Com. Voy a hacerte algunas preguntas para ayudarte mejor.
+              Hola, soy el asistente técnico de Punto Com. Voy a hacerte algunas preguntas para ayudarte mejor.
             </div>
 
             {step === 1 ? (
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-slate-100">1. Que necesitas reparar?</div>
+                <div className="text-sm font-semibold text-slate-100">1. ¿Qué necesitás reparar?</div>
                 <div className="grid gap-2">
                   {deviceOptions.map((option) => (
                     <button
@@ -107,7 +107,7 @@ export function AIChatWidget() {
 
             {step === 2 ? (
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-slate-100">2. Que problema estas teniendo?</div>
+                <div className="text-sm font-semibold text-slate-100">2. ¿Qué problema estás teniendo?</div>
                 <div className="grid gap-2">
                   {problemOptions.map((option) => (
                     <button
@@ -127,7 +127,7 @@ export function AIChatWidget() {
 
             {step === 3 ? (
               <div className="space-y-2">
-                <div className="text-sm font-semibold text-slate-100">3. Que sistema operativo usas?</div>
+                <div className="text-sm font-semibold text-slate-100">3. ¿Qué sistema operativo usás?</div>
                 <div className="grid gap-2">
                   {osOptions.map((option) => (
                     <button
@@ -147,12 +147,12 @@ export function AIChatWidget() {
 
             {step === 4 ? (
               <div className="space-y-3">
-                <div className="text-sm font-semibold text-slate-100">4. Describe el problema</div>
+                <div className="text-sm font-semibold text-slate-100">4. Describí el problema</div>
                 <textarea
                   value={details}
                   onChange={(e) => setDetails(e.target.value)}
                   rows={3}
-                  placeholder="Contame que pasa, desde cuando, mensajes de error, etc."
+                  placeholder="Contame qué pasa, desde cuándo, mensajes de error, etc."
                   className="w-full resize-none rounded-xl border border-slate-800 bg-slate-950/40 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 outline-none focus:border-brand/60"
                 />
 
@@ -162,7 +162,7 @@ export function AIChatWidget() {
                 </div>
 
                 <a className="btn-primary w-full" href={waUrl} target="_blank" rel="noreferrer">
-                  Enviar diagnostico por WhatsApp
+                  Enviar diagnóstico por WhatsApp
                 </a>
 
                 <button
@@ -187,7 +187,7 @@ export function AIChatWidget() {
         <button
           className="btn-primary shadow-soft"
           onClick={() => setOpen(true)}
-          aria-label="Abrir asistente tecnico"
+          aria-label="Abrir asistente técnico"
         >
           Asistente
         </button>

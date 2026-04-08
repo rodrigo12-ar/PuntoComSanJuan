@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/server';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: `Consejos de mantenimiento y seguridad informatica en ${SITE.city}, Argentina.`
+  description: `Consejos de mantenimiento y seguridad informática en ${SITE.city}, Argentina.`
 };
 
 type Props = {
@@ -37,14 +37,14 @@ export default async function BlogIndexPage({ searchParams }: Props) {
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl">Blog</h1>
-          <p className="mt-3 max-w-2xl text-slate-900">Guias y recomendaciones para tu equipo.</p>
+          <p className="mt-3 max-w-2xl text-slate-900">Guías y recomendaciones para tu equipo.</p>
         </div>
 
         <form className="card flex items-center gap-2 p-2 sm:w-[360px]" action="/blog" method="get">
           <input
             name="q"
             defaultValue={q}
-            placeholder="Buscar articulos..."
+            placeholder="Buscar artículos..."
             className="w-full bg-transparent px-3 py-2 text-sm text-slate-900 placeholder:text-slate-900 outline-none"
           />
           <button className="btn-primary px-4 py-2" type="submit">
@@ -67,14 +67,14 @@ export default async function BlogIndexPage({ searchParams }: Props) {
               <div className="mt-2 text-base font-bold text-slate-900">{p.title}</div>
               <p className="mt-2 line-clamp-3 text-sm text-slate-900">
                 {p.content.slice(0, 160)}
-                {p.content.length > 160 ? '...' : ''}
+                {p.content.length > 160 ? '…' : ''}
               </p>
-              <div className="mt-4 text-sm font-semibold text-slate-900">Leer -&gt;</div>
+              <div className="mt-4 text-sm font-semibold text-slate-900">Leer →</div>
             </Link>
           ))}
         </div>
       ) : (
-        <div className="mt-8 text-sm text-slate-900">Todavia no hay articulos publicados.</div>
+        <div className="mt-8 text-sm text-slate-900">Todavía no hay artículos publicados.</div>
       )}
 
       {totalPages > 1 && (
@@ -83,7 +83,7 @@ export default async function BlogIndexPage({ searchParams }: Props) {
             Anterior
           </button>
           <div className="text-sm text-slate-900">
-            Pagina {page} de {totalPages}
+            Página {page} de {totalPages}
           </div>
           <button className="btn-outline" disabled={page >= totalPages}>
             Siguiente

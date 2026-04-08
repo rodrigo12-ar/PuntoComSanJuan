@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     .maybeSingle();
 
   const title = data?.title ?? params.slug.replace(/-/g, ' ');
-  const description = `Articulo del blog de ${SITE.name} sobre mantenimiento y reparacion de equipos en ${SITE.city}.`;
+  const description = `Artículo del blog de ${SITE.name} sobre mantenimiento y reparación de equipos en ${SITE.city}.`;
 
   return {
     title,
@@ -80,9 +80,9 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       <div className="card mt-10 p-6 text-slate-900">
-        <div className="text-base font-bold text-slate-900">Queres que lo revisemos?</div>
+        <div className="text-base font-bold text-slate-900">¿Querés que lo revisemos?</div>
         <p className="mt-2 text-sm text-slate-900">
-          Envia tu consulta por WhatsApp y coordinamos diagnostico en {SITE.city}.
+          Enviá tu consulta por WhatsApp y coordinamos diagnóstico en {SITE.city}.
         </p>
         <a className="btn-primary mt-5" href={SITE.whatsappWaMe} target="_blank" rel="noreferrer">
           Contactar por WhatsApp
@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       <section className="mt-10">
-        <h2 className="text-xl font-extrabold tracking-tight">Articulos relacionados</h2>
+        <h2 className="text-xl font-extrabold tracking-tight">Artículos relacionados</h2>
         <div className="mt-4 grid gap-4 md:grid-cols-2">
           {related?.map((x: any) => (
             <Link
@@ -99,7 +99,7 @@ export default async function BlogPostPage({ params }: Props) {
               className="card p-5 text-slate-900 transition hover:border-slate-700"
             >
               <div className="text-sm font-bold text-slate-900">{x.title}</div>
-              <div className="mt-2 text-sm font-semibold text-slate-900">Leer -&gt;</div>
+              <div className="mt-2 text-sm font-semibold text-slate-900">Leer →</div>
             </Link>
           ))}
         </div>

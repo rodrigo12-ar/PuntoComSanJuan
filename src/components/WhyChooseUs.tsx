@@ -1,11 +1,11 @@
 const items = [
   {
-    title: 'Servicios rapidos',
+    title: 'Servicios rápidos',
     desc: 'Tiempos de respuesta cortos y prioridades claras para que no pierdas tiempo.'
   },
   {
-    title: 'Diagnosticos profesionales',
-    desc: 'Evaluacion precisa antes de intervenir para evitar gastos innecesarios.'
+    title: 'Diagnósticos profesionales',
+    desc: 'Evaluación precisa antes de intervenir para evitar gastos innecesarios.'
   },
   {
     title: 'Presupuestos transparentes',
@@ -13,7 +13,7 @@ const items = [
   },
   {
     title: 'Soporte confiable',
-    desc: 'Acompanamiento real para hogares, estudiantes, emprendedores y comercios.'
+    desc: 'Acompañamiento real para hogares, estudiantes, emprendedores y comercios.'
   }
 ] as const;
 
@@ -23,7 +23,7 @@ export function WhyChooseUs() {
       <div className="max-w-2xl">
         <div className="section-kicker reveal-up">Confianza y proceso</div>
         <h2 className="reveal-up reveal-up-delay-1 mt-4 text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">
-          Por que elegirnos
+          ¿Por qué elegirnos?
         </h2>
       </div>
 

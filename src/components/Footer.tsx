@@ -14,11 +14,7 @@ export function Footer() {
             <a href={BUSINESS.whatsappWaMe} target="_blank" rel="noopener noreferrer">
               WhatsApp
             </a>
-            <a
-              href={BUSINESS.instagramUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={BUSINESS.instagramUrl} target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
           </div>

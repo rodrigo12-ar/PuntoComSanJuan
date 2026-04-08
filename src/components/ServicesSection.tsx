@@ -3,33 +3,33 @@ import { ServiceCard, type ServiceCardData } from '@/components/ServiceCard';
 const SERVICES: ServiceCardData[] = [
   {
     icon: '🛠️',
-    title: 'Reparacion de PC y notebook',
-    description: 'Diagnostico y solucion de fallas de hardware y software con explicacion clara.'
+    title: 'Reparación de PC y notebook',
+    description: 'Diagnóstico y solución de fallas de hardware y software con explicación clara.'
   },
   {
     icon: '🧼',
-    title: 'Limpieza y eliminacion de virus',
-    description: 'Limpieza profunda, eliminacion de malware y mejora de seguridad del sistema.'
+    title: 'Limpieza y eliminación de virus',
+    description: 'Limpieza profunda, eliminación de malware y mejora de seguridad del sistema.'
   },
   {
     icon: '💿',
-    title: 'Instalacion de sistema operativo',
-    description: 'Windows, drivers, programas esenciales, configuracion y respaldo.'
+    title: 'Instalación de sistema operativo',
+    description: 'Windows, drivers, programas esenciales, configuración y respaldo.'
   },
   {
     icon: '🚀',
-    title: 'Optimizacion de rendimiento',
-    description: 'Mejora de arranque, velocidad general y configuracion recomendada.'
+    title: 'Optimización de rendimiento',
+    description: 'Mejora de arranque, velocidad general y configuración recomendada.'
   },
   {
     icon: '🖨️',
-    title: 'Soporte para impresoras y perifericos',
-    description: 'Configuracion, deteccion de fallas y solucion de problemas frecuentes.'
+    title: 'Soporte para impresoras y periféricos',
+    description: 'Configuración, detección de fallas y solución de problemas frecuentes.'
   },
   {
     icon: '🧑‍💻',
-    title: 'Soporte tecnico personalizado',
-    description: 'Asistencia para hogares, emprendedores y pequenos comercios.'
+    title: 'Soporte técnico personalizado',
+    description: 'Asistencia para hogares, emprendedores y pequeños comercios.'
   }
 ];
 
@@ -43,8 +43,8 @@ export function ServicesSection() {
             Soluciones pensadas para que tus equipos funcionen mejor
           </h2>
           <p className="reveal-up reveal-up-delay-2 mt-3 text-sm text-slate-600">
-            Desde mantenimiento y formateos hasta recuperacion de rendimiento, trabajamos con un enfoque claro,
-            practico y rapido.
+            Desde mantenimiento y formateos hasta recuperación de rendimiento, trabajamos con un enfoque claro,
+            práctico y rápido.
           </p>
         </div>
       </div>

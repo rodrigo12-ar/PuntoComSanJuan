@@ -31,7 +31,7 @@ export function ServiceCard({
             rel="noreferrer"
           >
             <span>{cta}</span>
-            <span className="interactive-arrow">-&gt;</span>
+            <span className="interactive-arrow">→</span>
           </a>
         </div>
       </div>

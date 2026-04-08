@@ -27,7 +27,8 @@ export function BlogPreview({ posts }: Props) {
               </div>
               <div className="mt-2 text-base font-bold text-slate-50">{p.title}</div>
               <p className="mt-2 line-clamp-3 text-sm text-slate-300">
-                {p.content.slice(0, 140)}{p.content.length > 140 ? '…' : ''}
+                {p.content.slice(0, 140)}
+                {p.content.length > 140 ? '…' : ''}
               </p>
               <div className="mt-4 text-sm font-semibold text-brand">Leer más →</div>
             </Link>
@@ -47,4 +48,3 @@ export function BlogPreview({ posts }: Props) {
     </section>
   );
 }
-

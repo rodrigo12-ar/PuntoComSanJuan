@@ -2,16 +2,16 @@ import Link from 'next/link';
 import { SITE } from '@/lib/site';
 
 const quickStats = [
-  { value: 'Respuesta rapida', detail: 'Atencion agil por WhatsApp e Instagram.' },
-  { value: 'Diagnostico claro', detail: 'Explicaciones simples antes de avanzar.' },
+  { value: 'Respuesta rápida', detail: 'Atención ágil por WhatsApp e Instagram.' },
+  { value: 'Diagnóstico claro', detail: 'Explicaciones simples antes de avanzar.' },
   { value: 'Soporte local', detail: `Servicio cercano en ${SITE.city}.` }
 ] as const;
 
 const highlights = [
-  { icon: '⚡', title: 'Respuesta rapida' },
-  { icon: '🧠', title: 'Diagnostico preciso' },
-  { icon: '🛡️', title: 'Mas seguridad' },
-  { icon: '💬', title: 'Atencion directa' }
+  { icon: '⚡', title: 'Respuesta rápida' },
+  { icon: '🧠', title: 'Diagnóstico preciso' },
+  { icon: '🛡️', title: 'Más seguridad' },
+  { icon: '💬', title: 'Atención directa' }
 ] as const;
 
 export function Hero() {
@@ -25,20 +25,20 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:items-center md:py-24">
         <div className="space-y-6">
-          <div className="section-kicker reveal-up">Servicio tecnico informatico en {SITE.city}</div>
+          <div className="section-kicker reveal-up">Servicio técnico informático en {SITE.city}</div>
 
           <h1 className="reveal-up reveal-up-delay-1 text-4xl font-extrabold tracking-tight text-slate-900 md:text-6xl">
-            Soluciones informaticas claras, rapidas y profesionales
+            Soluciones informáticas claras, rápidas y profesionales
           </h1>
 
           <p className="reveal-up reveal-up-delay-2 max-w-xl text-base text-slate-700 md:text-lg">
-            Reparacion de PC y notebooks, limpieza, optimizacion, instalacion de sistemas, soporte tecnico y atencion
+            Reparación de PC y notebooks, limpieza, optimización, instalación de sistemas, soporte técnico y atención
             personalizada en San Juan.
           </p>
 
           <div className="reveal-up reveal-up-delay-3 flex flex-col gap-3 sm:flex-row">
             <a className="btn-primary" href={SITE.whatsappWaMe} target="_blank" rel="noreferrer">
-              Pedir diagnostico
+              Pedir diagnóstico
             </a>
 
             <Link className="btn-outline" href="/contact">
@@ -59,10 +59,10 @@ export function Hero() {
         <div className="card hero-panel reveal-up reveal-up-delay-2 p-8">
           <div className="space-y-5">
             <div>
-              <div className="section-kicker">Que resolvemos</div>
+              <div className="section-kicker">Qué resolvemos</div>
               <p className="mt-4 text-sm leading-6 text-slate-700">
                 Problemas de rendimiento, formateos, virus, fallas de software, instalaciones, mantenimiento y soporte
-                tecnico para hogares y comercios.
+                técnico para hogares y comercios.
               </p>
             </div>
 
