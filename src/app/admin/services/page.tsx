@@ -15,8 +15,8 @@ export default async function AdminServicesPage() {
       <div className="card p-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <div className="text-sm font-semibold text-slate-200">Servicios</div>
-            <div className="mt-1 text-sm text-slate-300">CRUD de servicios pendiente de conectar a Supabase.</div>
+            <div className="text-sm font-semibold text-slate-700">Servicios</div>
+            <div className="mt-1 text-sm text-slate-500">CRUD de servicios pendiente de conectar a Supabase.</div>
           </div>
           <button className="btn-primary" type="button" disabled>
             Crear servicio
@@ -25,7 +25,7 @@ export default async function AdminServicesPage() {
       </div>
 
       <div className="card p-6">
-        <div className="text-sm text-slate-300">Lista vacía por ahora.</div>
+        <div className="text-sm text-slate-500">Lista vacía por ahora.</div>
       </div>
     </div>
   );

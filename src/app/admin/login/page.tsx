@@ -28,12 +28,12 @@ export default async function AdminLoginPage({ searchParams }: Props) {
   return (
     <div className="mx-auto max-w-md">
       <div className="card p-6">
-        <h1 className="text-xl font-extrabold tracking-tight">Ingresar</h1>
-        <p className="mt-2 text-sm text-slate-300">
+        <h1 className="text-xl font-extrabold tracking-tight text-slate-900">Ingresar</h1>
+        <p className="mt-2 text-sm text-slate-600">
           Ingresá con tu usuario de Supabase para administrar el contenido del sitio.
         </p>
         {unauthorized ? (
-          <div className="mt-4 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-amber-100">
+          <div className="mt-4 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-amber-800">
             Esa cuenta no está autorizada para acceder al panel.
           </div>
         ) : null}
