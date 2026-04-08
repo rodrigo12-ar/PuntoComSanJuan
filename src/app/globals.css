@@ -32,7 +32,9 @@ a {
 }
 
 .card {
-  @apply relative overflow-hidden rounded-2xl border border-slate-200/90 bg-white/92 shadow-soft backdrop-blur-sm;
+  @apply relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft backdrop-blur-sm;
+  border-color: rgba(226, 232, 240, 0.9);
+  background-color: rgba(255, 255, 255, 0.92);
   transition:
     transform 220ms ease,
     box-shadow 220ms ease,
@@ -75,7 +77,8 @@ a {
 }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/90 px-5 py-3 text-sm font-semibold text-slate-700;
+  @apply inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700;
+  background-color: rgba(255, 255, 255, 0.9);
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -96,11 +99,14 @@ a {
 }
 
 .section-kicker {
-  @apply inline-flex items-center rounded-full border border-sky-200 bg-white/85 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-700;
+  @apply inline-flex items-center rounded-full border border-sky-200 bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-sky-700;
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .stat-chip {
-  @apply rounded-2xl border border-white/70 bg-white/85 px-4 py-3 shadow-sm backdrop-blur-sm;
+  @apply rounded-2xl border bg-white px-4 py-3 shadow-sm backdrop-blur-sm;
+  border-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.85);
 }
 
 .interactive-arrow {
